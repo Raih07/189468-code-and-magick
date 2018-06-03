@@ -59,10 +59,10 @@ window.renderStatistics = function (ctx, names, times) {
   for (var i = 0; i < names.length; i++) {
     ctx.fillStyle = (names[i] === 'Вы') ? USER_COLOR : getColor();
     var barHeight = (Math.round(times[i]) * BAR_HEIGHT) / maxTime;
-    ctx.fillRect(BAR_X_START + (BAR_INDENT + BAR_WIDTH) * i, BAR_Y_START + BAR_HEIGHT - barHeight + FONT_HEIGHT / 2, BAR_WIDTH, barHeight;
+    ctx.fillRect(BAR_X_START + (BAR_INDENT + BAR_WIDTH) * i, BAR_Y_START + BAR_HEIGHT - barHeight + FONT_HEIGHT / 2, BAR_WIDTH, barHeight);
 
     ctx.fillStyle = '#000000';
-    ctx.fillText(Math.round(times[i]), BAR_X_START + (BAR_INDENT + BAR_WIDTH) * i, BAR_Y_START + BAR_HEIGHT - barHeight;
+    ctx.fillText(Math.round(times[i]), BAR_X_START + (BAR_INDENT + BAR_WIDTH) * i, BAR_Y_START + BAR_HEIGHT - barHeight);
     ctx.fillText(names[i], BAR_X_START + (BAR_INDENT + BAR_WIDTH) * i, BAR_Y_START + BAR_HEIGHT + FONT_HEIGHT * 1.5);
   }
 };
