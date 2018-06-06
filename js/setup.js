@@ -9,7 +9,7 @@ var EYES_COLORS = ['black', 'red', 'blue', 'yellow', 'green'];
 var userDialog = document.querySelector('.setup');
 userDialog.classList.remove('hidden');
 
-var similarList= userDialog.querySelector('.setup-similar-list');
+var similarList = userDialog.querySelector('.setup-similar-list');
 
 var similarWizardTemplate = document.querySelector('#similar-wizard-template').content.querySelector('.setup-similar-item');
 
@@ -32,13 +32,13 @@ var createPlayer = function () {
 };
 
 var createArrayPlayer = function (count) {
-  var playerArrays = [];
+  var players = [];
 
   for (var i = 0; i < count; i++) {
-    playerArrays.push(createPlayer());
+    players.push(createPlayer());
   }
 
-  return playerArrays;
+  return players;
 };
 
 var renderWizard = function (wizard) {
