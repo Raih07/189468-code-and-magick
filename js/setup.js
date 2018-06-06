@@ -25,7 +25,7 @@ var createPlayer = function () {
   var playerEyesColor = getRandomElement(EYES_COLORS);
 
   return {
-    name: playerFirstName + playerSecondName,
+    name: playerFirstName + ' ' + playerSecondName,
     coatColor: playerCoatColor,
     eyesColor: playerEyesColor
   };
