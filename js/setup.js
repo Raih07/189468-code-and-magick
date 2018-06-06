@@ -9,13 +9,13 @@ var EYES_COLORS = ['black', 'red', 'blue', 'yellow', 'green'];
 var userDialog = document.querySelector('.setup');
 userDialog.classList.remove('hidden');
 
-var similarListElement = userDialog.querySelector('.setup-similar-list');
+var similarList= userDialog.querySelector('.setup-similar-list');
 
 var similarWizardTemplate = document.querySelector('#similar-wizard-template').content.querySelector('.setup-similar-item');
 
-var getRandomElement = function (arr) {
-  var index = Math.floor(Math.random() * arr.length);
-  return arr[index];
+var getRandomElement = function (arrays) {
+  var index = Math.floor(Math.random() * arrays.length);
+  return arrays[index];
 };
 
 var createPlayer = function () {
@@ -32,13 +32,13 @@ var createPlayer = function () {
 };
 
 var createArrayPlayer = function (count) {
-  var playerArray = [];
+  var playerArrays = [];
 
   for (var i = 0; i < count; i++) {
-    playerArray.push(createPlayer());
+    playerArrays.push(createPlayer());
   }
 
-  return playerArray;
+  return playerArrays;
 };
 
 var renderWizard = function (wizard) {
@@ -57,6 +57,6 @@ var fragment = document.createDocumentFragment();
 for (var i = 0; i < wizards.length; i++) {
   fragment.appendChild(renderWizard(wizards[i]));
 }
-similarListElement.appendChild(fragment);
+similarList.appendChild(fragment);
 
 userDialog.querySelector('.setup-similar').classList.remove('hidden');
