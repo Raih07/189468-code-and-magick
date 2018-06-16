@@ -53,4 +53,4 @@
   similarList.appendChild(fragment);
 
   setup.querySelector('.setup-similar').classList.remove('hidden');
-}) ();
+})();

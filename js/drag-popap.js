@@ -28,24 +28,24 @@
         y: moveEvt.clientY
       };
 
-        setup.style.left = (setup.offsetLeft + shift.x) + 'px';
-        setup.style.top = (setup.offsetTop + shift.y) + 'px';
-      };
+      setup.style.left = (setup.offsetLeft + shift.x) + 'px';
+      setup.style.top = (setup.offsetTop + shift.y) + 'px';
+    };
 
-      var onMouseUp = function (upEvt) {
-        upEvt.preventDefault();
+    var onMouseUp = function (upEvt) {
+      upEvt.preventDefault();
 
-        document.removeEventListener('mousemove', onMouseMove);
-        document.removeEventListener('mouseup', onMouseUp);
+      document.removeEventListener('mousemove', onMouseMove);
+      document.removeEventListener('mouseup', onMouseUp);
 
-        if (dragged) {
-          var onDialogHandlerClick = function (e) {
-            e.preventDefault();
-            dialogHandler.removeEventListener('click', onDialogHandlerClick);
-          };
-          dialogHandler.addEventListener('click', onDialogHandlerClick);
-        }
-      };
+      if (dragged) {
+        var onDialogHandlerClick = function (e) {
+          e.preventDefault();
+          dialogHandler.removeEventListener('click', onDialogHandlerClick);
+        };
+        dialogHandler.addEventListener('click', onDialogHandlerClick);
+      }
+    };
 
     document.addEventListener('mousemove', onMouseMove);
     document.addEventListener('mouseup', onMouseUp);
@@ -82,4 +82,4 @@
     evt.target.style.backgroundColor = '';
     evt.preventDefault();
   });
-}) ();
+})();

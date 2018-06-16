@@ -26,4 +26,4 @@
     isEscEvent: isEscEvent,
     isEnterEvent: isEnterEvent
   };
-}) ();
+})();

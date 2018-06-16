@@ -6,8 +6,6 @@
   var FIREBALL_COLORS = ['#ee4830', '#30a8ee', '#5ce6c0', '#e848d5', '#e6e848'];
 
   var setup = document.querySelector('.setup');
-  var setupPlayer = setup.querySelector('.setup-player');
-
   var coatColorInput = setup.querySelector('input[name="coat-color"]');
   var eyesColorInput = setup.querySelector('input[name="eyes-color"]');
   var fireballColorInput = setup.querySelector('input[name="fireball-color"]');
@@ -36,4 +34,4 @@
   };
 
   window.changePlayer = changePlayer;
-}) ();
+})();

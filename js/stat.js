@@ -67,4 +67,4 @@
       ctx.fillText(names[i], BAR_X_START + (BAR_INDENT + BAR_WIDTH) * i, BAR_Y_START + BAR_HEIGHT + FONT_HEIGHT * 1.5);
     }
   };
-}) ();
+})();
