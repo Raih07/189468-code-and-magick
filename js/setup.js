@@ -1,11 +1,11 @@
 'use strict';
 
-var ESC_KEYCODE = 27;
-var ENTER_KEYCODE = 13;
+//var ESC_KEYCODE = 27;
+//var ENTER_KEYCODE = 13;
 
-var WIZARD_COUNT = 4;
-var WIZARD_FIRST_NAMES = ['Иван', 'Хуан Себастьян', 'Мария', 'Кристоф', 'Виктор', 'Юлия', 'Люпита', 'Вашингтон'];
-var WIZARD_SECOND_NAMES = ['да Марья', 'Верон', 'Мирабелла', 'Вальц', 'Онопко', 'Топольницкая', 'Нионго', 'Ирвинг'];
+//var WIZARD_COUNT = 4;
+//var WIZARD_FIRST_NAMES = ['Иван', 'Хуан Себастьян', 'Мария', 'Кристоф', 'Виктор', 'Юлия', 'Люпита', 'Вашингтон'];
+//var WIZARD_SECOND_NAMES = ['да Марья', 'Верон', 'Мирабелла', 'Вальц', 'Онопко', 'Топольницкая', 'Нионго', 'Ирвинг'];
 var COAT_COLORS = ['rgb(101, 137, 164)', 'rgb(241, 43, 107)', 'rgb(146, 100, 161)', 'rgb(56, 159, 117)', 'rgb(215, 210, 55)', 'rgb(0, 0, 0)'];
 var EYES_COLORS = ['black', 'red', 'blue', 'yellow', 'green'];
 var FIREBALL_COLORS = ['#ee4830', '#30a8ee', '#5ce6c0', '#e848d5', '#e6e848'];
@@ -21,21 +21,24 @@ var coatColorInput = setup.querySelector('input[name="coat-color"]');
 var eyesColorInput = setup.querySelector('input[name="eyes-color"]');
 var fireballColorInput = setup.querySelector('input[name="fireball-color"]');
 
-var similarList = setup.querySelector('.setup-similar-list');
+//var similarList = setup.querySelector('.setup-similar-list');
 
-var similarWizardTemplate = document.querySelector('#similar-wizard-template').content.querySelector('.setup-similar-item');
+//var similarWizardTemplate = document.querySelector('#similar-wizard-template').content.querySelector('.setup-similar-item');
 
+/*
 var getRandomElement = function (elements) {
   var index = Math.floor(Math.random() * elements.length);
   return elements[index];
-};
+};*/
 
+/*
 var onPopupEscPress = function (evt) {
   if (evt.keyCode === ESC_KEYCODE && !evt.target.classList.contains('setup-user-name')) {
     closePopup();
   }
-};
+};*/
 
+/*
 var onUserNameInputInvalid = function () {
   if (userNameInput.validity.tooShort) {
     userNameInput.setCustomValidity('Имя должно состоять минимум из 2-х символов');
@@ -46,10 +49,11 @@ var onUserNameInputInvalid = function () {
   } else {
     userNameInput.setCustomValidity('');
   }
-};
+};*/
 
+/*
 var setColorWizard = function (element, elementField, colors, flag) {
-  var color = getRandomElement(colors);
+  var color = window.utils.getRandomElement(colors);
   elementField.value = color;
 
   if (!flag) {
@@ -69,6 +73,11 @@ var onSetupPlayerClick = function (evt) {
   } else if (target.classList.contains('setup-fireball')) {
     setColorWizard(target.parentElement, fireballColorInput, FIREBALL_COLORS, true);
   }
+};*/
+
+/*
+var onSetupPlayerClick = function (evt) {
+  window.setupPlayers.changePlayer(evt);
 };
 
 var openPopup = function () {
@@ -105,8 +114,10 @@ setupClose.addEventListener('keydown', function (evt) {
   if (evt.keyCode === ENTER_KEYCODE) {
     closePopup();
   }
-});
+});*/
 
+
+/*
 dialogHandler.addEventListener('mousedown', function (evt) {
   evt.preventDefault();
 
@@ -186,13 +197,15 @@ artifactsElement.addEventListener('dragenter', function (evt) {
 artifactsElement.addEventListener('dragleave', function (evt) {
   evt.target.style.backgroundColor = '';
   evt.preventDefault();
-});
+});*/
 
+//setup1.js
+/*
 var createPlayer = function () {
-  var playerFirstName = getRandomElement(WIZARD_FIRST_NAMES);
-  var playerSecondName = getRandomElement(WIZARD_SECOND_NAMES);
-  var playerCoatColor = getRandomElement(COAT_COLORS);
-  var playerEyesColor = getRandomElement(EYES_COLORS);
+  var playerFirstName = window.utils.getRandomElement(WIZARD_FIRST_NAMES);
+  var playerSecondName = window.utils.getRandomElement(WIZARD_SECOND_NAMES);
+  var playerCoatColor = window.utils.getRandomElement(COAT_COLORS);
+  var playerEyesColor = window.utils.getRandomElement(EYES_COLORS);
 
   return {
     name: playerFirstName + ' ' + playerSecondName,
@@ -229,4 +242,4 @@ for (var i = 0; i < wizards.length; i++) {
 }
 similarList.appendChild(fragment);
 
-setup.querySelector('.setup-similar').classList.remove('hidden');
+setup.querySelector('.setup-similar').classList.remove('hidden');*/
