@@ -21,8 +21,15 @@
     return elements[index];
   };
 
+  var getRandomSortElements = function (elements) {
+    return elements.slice().sort(function () {
+      return Math.random() > 0.5 ? 1 : -1;
+    });
+  };
+
   window.utils = {
     getRandomElement: getRandomElement,
+    getRandomSortElements: getRandomSortElements,
     isEscEvent: isEscEvent,
     isEnterEvent: isEnterEvent
   };

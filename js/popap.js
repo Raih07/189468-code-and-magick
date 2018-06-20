@@ -2,6 +2,7 @@
 
 (function () {
   var setup = document.querySelector('.setup');
+  var setupForm = document.querySelector('.setup-wizard-form');
   var userNameInput = setup.querySelector('.setup-user-name');
   var setupOpen = document.querySelector('.setup-open');
   var setupClose = setup.querySelector('.setup-close');
@@ -21,6 +22,11 @@
     window.validationForm(userNameInput);
   };
 
+  var onFormSubmit = function (evt) {
+    window.backend.uploadData(new FormData(setupForm), closePopup, window.showError);
+    evt.preventDefault();
+  };
+
   var openPopup = function () {
     setup.classList.remove('hidden');
     setup.style.left = '';
@@ -28,6 +34,7 @@
     document.addEventListener('keydown', onPopupEscPress);
     userNameInput.addEventListener('invalid', onUserNameInputInvalid);
     setupPlayer.addEventListener('click', onSetupPlayerClick);
+    setupForm.addEventListener('submit', onFormSubmit);
   };
 
   var closePopup = function () {
@@ -35,6 +42,7 @@
     document.removeEventListener('keydown', onPopupEscPress);
     userNameInput.removeEventListener('invalid', onUserNameInputInvalid);
     setupPlayer.removeEventListener('click', onSetupPlayerClick);
+    setupForm.removeEventListener('submit', onFormSubmit);
   };
 
   setupOpen.addEventListener('click', function () {
