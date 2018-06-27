@@ -18,11 +18,12 @@
   };
 
   var renderAllWizards = function (elements) {
-    elements = window.utils.getRandomSortElements(elements);
+    var elementsCount = elements.length > WIZARD_COUNT ? WIZARD_COUNT : elements.length;
+    similarList.innerHTML = '';
 
     var fragment = document.createDocumentFragment();
 
-    for (var i = 0; i < WIZARD_COUNT; i++) {
+    for (var i = 0; i < elementsCount; i++) {
       fragment.appendChild(renderWizard(elements[i]));
     }
     similarList.appendChild(fragment);
@@ -30,5 +31,5 @@
     setup.querySelector('.setup-similar').classList.remove('hidden');
   };
 
-  window.backend.downloadData(renderAllWizards, window.showError);
+  window.render = renderAllWizards;
 })();

@@ -15,7 +15,7 @@
   };
 
   var onSetupPlayerClick = function (evt) {
-    window.changePlayer(evt);
+    window.wizardSetup.changePlayer(evt);
   };
 
   var onUserNameInputInvalid = function () {
