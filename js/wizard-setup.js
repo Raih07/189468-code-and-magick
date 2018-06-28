@@ -10,14 +10,29 @@
   var eyesColorInput = setup.querySelector('input[name="eyes-color"]');
   var fireballColorInput = setup.querySelector('input[name="fireball-color"]');
 
+  var wizard = {
+    onEyesChange: function (color) {
+      return color;
+    },
+    onCoatChange: function (color) {
+      return color;
+    }
+  };
+
   var setColorWizard = function (element, elementField, colors, flag) {
-    var color = window.utils.getRandomElement(colors);
-    elementField.value = color;
+    var newColor = window.utils.getRandomElement(colors);
+    elementField.value = newColor;
 
     if (!flag) {
-      element.style.fill = color;
+      element.style.fill = newColor;
     } else {
-      element.style.backgroundColor = color;
+      element.style.backgroundColor = newColor;
+    }
+
+    if (element.classList.contains('wizard-coat')) {
+      wizard.onCoatChange(newColor);
+    } else if (element.classList.contains('wizard-eyes')) {
+      wizard.onEyesChange(newColor);
     }
   };
 
@@ -33,5 +48,8 @@
     }
   };
 
-  window.changePlayer = changePlayer;
+  window.wizardSetup = {
+    wizard: wizard,
+    changePlayer: changePlayer
+  };
 })();
